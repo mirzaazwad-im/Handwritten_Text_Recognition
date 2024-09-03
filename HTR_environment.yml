@@ -1,26 +1,37 @@
 name: HTR
 channels:
   - pytorch
-  - anaconda
+  - nvidia
   - conda-forge
+  - anaconda
   - defaults
 dependencies:
   - _libgcc_mutex=0.1=main
+  - _pytorch_select=0.1=cpu_0
   - attrs=19.3.0=py_0
   - backcall=0.2.0=py_0
+  - blas=1.0=mkl
   - bleach=3.1.5=py_0
   - bzip2=1.0.8=h516909a_2
-  - ca-certificates=2020.6.20=hecda079_0
+  - ca-certificates=2024.7.2=h06a4308_0
   - cairo=1.14.12=h80bd089_1005
-  - certifi=2020.6.20=py36h9f0ad1d_0
+  - certifi=2021.5.30=py36h06a4308_0
   - cffi=1.14.0=py36hd463f26_0
   - click=7.1.2=py_0
   - cloudpickle=1.3.0=py_0
+  - cuda-cudart=12.4.127=0
+  - cuda-cupti=12.4.127=0
+  - cuda-libraries=12.4.0=0
+  - cuda-nvrtc=12.4.127=0
+  - cuda-nvtx=12.4.127=0
+  - cuda-opencl=12.4.127=0
+  - cuda-runtime=12.4.0=0
   - cudatoolkit=10.0.130=0
   - cudnn=7.3.1=cuda10.0_0
   - cycler=0.10.0=py_2
   - cytoolz=0.10.1=py36h516909a_0
   - dask-core=2.14.0=py_0
+  - dataclasses=0.8=pyh4f3eec9_6
   - dbus=1.13.12=h746ee38_0
   - decorator=4.4.2=py_0
   - defusedxml=0.6.0=py_0
@@ -59,8 +70,14 @@ dependencies:
   - jupyter_console=6.1.0=py_0
   - jupyter_core=4.6.3=py36_0
   - kiwisolver=1.2.0=py36hdb11119_0
-  - libblas=3.8.0=14_openblas
-  - libcblas=3.8.0=14_openblas
+  - libblas=3.8.0=21_mkl
+  - libcblas=3.8.0=21_mkl
+  - libcublas=12.4.2.65=0
+  - libcufft=11.2.0.44=0
+  - libcufile=1.9.1.3=0
+  - libcurand=10.3.5.147=0
+  - libcusolver=11.6.0.99=0
+  - libcusparse=12.3.0.142=0
   - libedit=3.1.20181209=hc058e9b_0
   - libffi=3.2.1=he1b5a44_1007
   - libgcc-ng=9.1.0=hdf63c60_0
@@ -68,7 +85,11 @@ dependencies:
   - libgfortran-ng=7.3.0=hdf63c60_5
   - libglu=9.0.0=he1b5a44_1001
   - libiconv=1.15=h516909a_1006
-  - liblapack=3.8.0=14_openblas
+  - liblapack=3.8.0=21_mkl
+  - libnpp=12.2.5.2=0
+  - libnvfatbin=12.4.127=0
+  - libnvjitlink=12.4.99=0
+  - libnvjpeg=12.3.1.89=0
   - libopenblas=0.3.7=h5ec1e0e_6
   - libopencv=3.4.2=hb342d67_1
   - libpng=1.6.37=hed695b0_1
@@ -77,6 +98,7 @@ dependencies:
   - libstdcxx-ng=9.1.0=hdf63c60_0
   - libtiff=4.1.0=hc7e4089_6
   - libuuid=2.32.1=h14c3975_1000
+  - libuv=1.40.0=h7b6447c_0
   - libwebp-base=1.1.0=h516909a_3
   - libxcb=1.13=h14c3975_1002
   - libxml2=2.9.9=h13577e0_2
@@ -86,6 +108,7 @@ dependencies:
   - matplotlib-base=3.1.3=py36hef1b27d_0
   - mistune=0.8.4=py36h7b6447c_0
   - mkl=2020.0=166
+  - mkl-service=2.3.0=py36he8ac12f_0
   - nbconvert=5.6.1=py36_0
   - nbformat=5.0.7=py_0
   - ncurses=6.2=he6710b0_1
@@ -98,7 +121,7 @@ dependencies:
   - olefile=0.46=py_0
   - opencv=3.4.2=py36h6fd60c2_1
   - openh264=1.8.0=hdbcaa40_1000
-  - openssl=1.1.1g=h516909a_1
+  - openssl=1.1.1w=h7f8727e_0
   - packaging=20.4=py_0
   - pandoc=2.9.2.1=0
   - pandocfilters=1.4.2=py36_1
@@ -125,7 +148,8 @@ dependencies:
   - python-dateutil=2.8.1=py_0
   - python-lmdb=0.96=py36he1b5a44_0
   - python_abi=3.6=1_cp36m
-  - pytorch=1.0.1=py3.6_cuda10.0.130_cudnn7.4.2_2
+  - pytorch=1.7.0=py3.6_cpu_0
+  - pytorch-cuda=12.4=hc786d27_6
   - pywavelets=1.1.1=py36h785e9b2_1
   - pyyaml=5.1.2=py36h516909a_0
   - pyzmq=19.0.1=py36he6710b0_1
@@ -146,10 +170,12 @@ dependencies:
   - testpath=0.4.4=py_0
   - tk=8.6.8=h84994c4_1000
   - toolz=0.10.0=py_0
-  - torchvision=0.2.2=py_3
+  - torchaudio=0.7.0=py36
+  - torchvision=0.8.1=py36_cpu
   - tornado=6.0.4=py36h8c4c3a4_1
   - tqdm=4.47.0=pyh9f0ad1d_0
   - traitlets=4.3.3=py36_0
+  - typing_extensions=4.1.1=pyh06a4308_0
   - unidecode=1.0.23=py_0
   - wcwidth=0.2.5=py_0
   - webencodings=0.5.1=py36_1
@@ -178,38 +204,36 @@ dependencies:
   - zlib=1.2.11=h516909a_1006
   - zstd=1.4.4=h3b9ef0a_2
   - pip:
-    - absl-py==0.9.0
-    - arabic-reshaper==2.0.15
-    - astunparse==1.6.3
-    - cachetools==4.1.1
-    - chardet==3.0.4
-    - future==0.18.2
-    - gast==0.3.3
-    - google-auth==1.19.0
-    - google-auth-oauthlib==0.4.1
-    - google-pasta==0.2.0
-    - grpcio==1.30.0
-    - h5py==2.10.0
-    - idna==2.9
-    - keras-preprocessing==1.1.2
-    - markdown==3.2.2
-    - oauthlib==3.1.0
-    - opt-einsum==3.2.1
-    - pdf2image==1.5.4
-    - pyasn1==0.4.8
-    - pyasn1-modules==0.2.8
-    - python-bidi==0.4.2
-    - requests==2.23.0
-    - requests-oauthlib==1.3.0
-    - rsa==4.6
-    - tensorboard==2.2.2
-    - tensorboard-plugin-wit==1.7.0
-    - tensorflow==2.2.0
-    - tensorflow-estimator==2.2.0
-    - termcolor==1.1.0
-    - translation==1.0.5
-    - urllib3==1.25.8
-    - werkzeug==1.0.1
-    - wrapt==1.12.1
-prefix: /home/loisonv/anaconda3/envs/HTR
-
+      - absl-py==0.9.0
+      - arabic-reshaper==2.0.15
+      - astunparse==1.6.3
+      - cachetools==4.1.1
+      - chardet==3.0.4
+      - future==0.18.2
+      - gast==0.3.3
+      - google-auth==1.19.0
+      - google-auth-oauthlib==0.4.1
+      - google-pasta==0.2.0
+      - grpcio==1.30.0
+      - h5py==2.10.0
+      - idna==2.9
+      - keras-preprocessing==1.1.2
+      - markdown==3.2.2
+      - oauthlib==3.1.0
+      - opt-einsum==3.2.1
+      - pdf2image==1.5.4
+      - pyasn1==0.4.8
+      - pyasn1-modules==0.2.8
+      - python-bidi==0.4.2
+      - requests==2.23.0
+      - requests-oauthlib==1.3.0
+      - rsa==4.6
+      - tensorboard==2.2.2
+      - tensorboard-plugin-wit==1.7.0
+      - tensorflow==2.2.0
+      - tensorflow-estimator==2.2.0
+      - termcolor==1.1.0
+      - translation==1.0.5
+      - urllib3==1.25.8
+      - werkzeug==1.0.1
+      - wrapt==1.12.1

@@ -84,7 +84,7 @@ if __name__ == "__main__":
     # torch.save(MODEL, '/home/loisonv/Text_Recognition/trained_networks/ICFHR2014_model_imgH32.pth')
 
     # MODEL = torch.load('/home/hux/HTR/trained_networks/IAM_model_imgH64.pth')
-    MODEL.load_state_dict(torch.load(params.model_path))
+    MODEL.load_state_dict(torch.load(params.model_path, map_location=torch.device('cpu')))
 
     if params.cuda and torch.cuda.is_available():
         MODEL = MODEL.cuda()
